@@ -1,11 +1,13 @@
-import React from 'react'
-import {Switch,Router} from 'react-router-dom'
-import LandingPageContainer from './containers/LandingPageContainer'
+import React from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import LandingPageContainer from './containers/LandingPageContainer';
+import TestContainer from './containers/TestContainer';
 
 export default function Router() {
   return (
-    <switch>
-      <Route exact strict path='/' component={LandingPageContainer} />
-    </switch>
+    <Routes>
+      <Route exact strict path="/" element={<LandingPageContainer/>} />
+      <Route exact strict path="/test" element={<TestContainer/>} />
+    </Routes>
   )
 }

@@ -1,6 +1,6 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux'
 
-const testing = (state = "", action) => {
+export const testing = (state = "", action) => {
   const {type} = action
   switch (type) {
     default: return state;
@@ -13,6 +13,7 @@ const designPrinciplesState = {
 }
 
 export const getPrinciples = (state = designPrinciplesState, action) => {
+  console.log(`reduceres: ${action.type}`);
   const {payload, type} = action
   switch(type) {
     case 'GET_PRINCIPLES':

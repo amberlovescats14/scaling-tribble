@@ -4,14 +4,15 @@ const mockDataResponse = {
   status: 200,
   data: ['Operational', 'Security', 'Reliability', 'Performance', 'Cost']
 }
-export const getMockData = () => async (dispatch) => {
+
+export const getPrinciples = () => async (dispatch) => {
   try {
     // const response = await axios.get('/principles')
-    let {data} = mockDataResponse;
-    console.log(data);
+    let res = mockDataResponse;
+    console.log('actions test');
     dispatch({
       type: 'GET_PRINCIPLES',
-      payload: data
+      payload: res.data
     })
   } catch (error) {
     console.log(error.message);

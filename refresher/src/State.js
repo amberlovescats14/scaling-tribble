@@ -1,7 +1,7 @@
 export default {
-  test: "Sanity test",
+  test: "",
   principlesObject: {
     principles : [],
-  loading: true
+    loading: true
   }
 }
