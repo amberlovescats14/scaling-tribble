@@ -1,8 +1,9 @@
 import LandingPageComponent from '../components/LandingPageComponent'
 import { connect } from 'react-redux'
-import { getPrinciples } from '../redux/Reducers'
+import { getPrinciples } from '../redux/Actions'
 
 console.log('container');
+
 const mapStateToProps = state => ({
   test: state.test,
   principlesObject: state.principlesObject

@@ -1,5 +1,5 @@
 export default {
-  test: "",
+  test: "TESTING",
   principlesObject: {
     principles : [],
     loading: true

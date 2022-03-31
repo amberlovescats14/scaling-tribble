@@ -1,22 +1,23 @@
 import { combineReducers } from 'redux'
 
-export const testing = (state = "", action) => {
+const test = (state = "", action) => {
   const {type} = action
   switch (type) {
     default: return state;
   }
 }
 
-const designPrinciplesState = {
-  principles : [],
-  loading: true
-}
+// const test = {
+//   principles : [],
+//   loading: true
+// }
 
-export const getPrinciples = (state = designPrinciplesState, action) => {
-  console.log(`reduceres: ${action.type}`);
+export const getPrinciples = (state = {}, action) => {
   const {payload, type} = action
+  console.log(`PAYLOAD: ${action.payload}`);
   switch(type) {
     case 'GET_PRINCIPLES':
+      console.log("inside ");
       return {
         ...state,
         principles: payload,
@@ -25,11 +26,14 @@ export const getPrinciples = (state = designPrinciplesState, action) => {
       // case add principle
       // case update principle
       // case delete principle
-    default: return state
+    default: {
+      console.log("default");
+      return state
+    }
   }
 }
 
 export default combineReducers({
-  test: testing,
+  test,
   principlesObject: getPrinciples
 })

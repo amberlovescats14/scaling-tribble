@@ -1,19 +1,21 @@
-import {React} from 'react'
+import React, {useEffect} from 'react'
 
 export default function LandingPageComponent(props) {
-  // const {test} = props
-  console.log(props);
+  const { test, getPrinciples, principlesObject } = props
+
+  useEffect(() => {
+    getPrinciples()
+  }, [getPrinciples])
+  console.log(`home: ${principlesObject.principles}`);
 
   return (
-    <div 
-    style={{
-      background: "blue",
-      height: '50px',
-      padding: "1rem",
-    }}>
-    <h1>hello</h1>
-      {/* <h2>Landing Page Component amber</h2>
-      {test} */}
+    <div>
+      home
+      <br/>
+      PROP: {test}
+    {principlesObject.principles.map((p, i) => (
+      <li>{p}</li>
+    ))}
     </div>
   )
 }
