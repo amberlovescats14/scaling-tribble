@@ -1,15 +1,54 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { makeStyles } from '@material-ui/core/styles';
+import orange from '@material-ui/core/colors/orange';
+import { AppBar, CssBaseline, Toolbar, Typography } from '@material-ui/core';
 
-export default function Nav(props) {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    background: orange[800]
+  },
+  navlinks: {
+    marginLeft: theme.spacing(10),
+    display: "flex",
+  },
+ logo: {
+    flexGrow: "1",
+    cursor: "pointer",
+  },
+  link: {
+    textDecoration: "none",
+    color: "white",
+    fontSize: "20px",
+    marginLeft: theme.spacing(5),
+    "&:hover": {
+      color: "yellow",
+      borderBottom: "1px solid white",
+    },
+  },
+}));
+
+
+const Nav = () => {
+  const classes = useStyles();
   return (
-    <div>
-    <nav>
-      <ul>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/test'>Test</Link></li>
-      </ul>
-    </nav>
-    </div>
-    )
+    <AppBar position="static" className={classes.root}>
+      <CssBaseline />
+      <Toolbar>
+        <Typography variant="h4" className={classes.logo}>
+          Amber Jones
+        </Typography>
+          <div className={classes.navlinks}>
+            <Link to="/" className={classes.link}>
+              Home
+            </Link>
+            <Link to="/test" className={classes.link}>
+              About
+            </Link>
+          </div>
+      </Toolbar>
+    </AppBar>
+  );
 }
+
+export default Nav;
