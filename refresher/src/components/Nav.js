@@ -39,11 +39,11 @@ const Nav = () => {
           Amber Jones
         </Typography>
           <div className={classes.navlinks}>
-            <Link to="/" className={classes.link}>
+            <Link to="/home" className={classes.link}>
               Home
             </Link>
-            <Link to="/test" className={classes.link}>
-              About
+            <Link to="/form" className={classes.link}>
+              Form
             </Link>
           </div>
       </Toolbar>

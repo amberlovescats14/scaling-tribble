@@ -1,6 +1,5 @@
 import React, {useEffect, Fragment} from 'react';
-import Card from '../components/Card'
-import {  AppBar, CssBaseline, Toolbar, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import orange from '@material-ui/core/colors/orange';
 
@@ -27,7 +26,7 @@ const LandingPageComponent = (props) => {
         variant="h1"
         className={classes.header}>Hello World</Typography>
       {principlesObject.principles.map((p, i) => (
-        <Card principle={p} key={i}/>
+        p
       ))}
       </div>
       </Fragment>

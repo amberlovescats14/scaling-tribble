@@ -14,7 +14,6 @@ const test = (state = "", action) => {
 
 export const getPrinciples = (state = {}, action) => {
   const {payload, type} = action
-  console.log(`PAYLOAD: ${action.payload}`);
   switch(type) {
     case 'GET_PRINCIPLES':
       console.log("inside ");
@@ -27,7 +26,6 @@ export const getPrinciples = (state = {}, action) => {
       // case update principle
       // case delete principle
     default: {
-      console.log("default");
       return state
     }
   }
